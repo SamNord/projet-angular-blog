@@ -1,1 +1,11 @@
-<p>post-list-item works!</p>
+<li class='list-group-item' [ngClass]="{'list-group-item': true,
+'list-group-item-success': this.loveIts1 > this.loveIts2,
+'list-group-item-danger': this.loveIts1 < this.loveIts2}">
+    <p style="text-align: right">{{created_at | date:'MM/dd/yyyy, h:mm a'}}</p>
+    <h1>{{title}} </h1>
+
+    <p>{{content}}</p>
+
+    <button class="btn btn-success" (click)='good()'>Love it ({{this.loveIts1}})</button>&nbsp;
+    <button class="btn btn-danger" (click)='notGood()'>Don't love it ({{this.loveIts2}})</button>
+</li>
